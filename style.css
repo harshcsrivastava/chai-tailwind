@@ -1,0 +1,205 @@
+:root {
+    --surface: #111;
+    --surface-elevated: #181818;
+    --text: #f2f2f2;
+    --muted: #b8b8b8;
+    --edge: #2f2f2f;
+    --accent-cyan: #63d1ff;
+    --accent-amber: #ffb54a;
+    --glow-cyan: rgba(99, 209, 255, 0.24);
+    --glow-amber: rgba(255, 181, 74, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    padding: 1.25rem;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(30, 97, 121, 0.32) 0%, transparent 30%),
+        radial-gradient(circle at 86% 12%, rgba(128, 81, 19, 0.28) 0%, transparent 32%),
+        linear-gradient(165deg, #171717 0%, var(--surface) 58%, #0d0d0d 100%);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 999px;
+    filter: blur(50px);
+    animation: drift 10s ease-in-out infinite alternate;
+}
+
+body::before {
+    top: -4rem;
+    left: -3rem;
+    background: var(--glow-cyan);
+}
+
+body::after {
+    right: -4rem;
+    bottom: -5rem;
+    background: var(--glow-amber);
+    animation-delay: 0.8s;
+}
+
+a {
+    color: #c7dfff;
+    text-decoration: none;
+}
+
+.page-header,
+.demo-section {
+    border: 1px solid var(--edge);
+    border-radius: 0.75rem;
+    background-clip: padding-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.08) 35%, transparent 52%);
+    transform: translateX(-120%);
+    animation: sweep 3.4s ease-in-out infinite;
+}
+
+.page-header h1 {
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+}
+
+.page-header p {
+    color: var(--muted);
+    max-width: 60ch;
+}
+
+.page-main {
+    display: grid;
+    gap: 1rem;
+}
+
+.demo-section {
+    transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+    transition:
+        opacity 620ms ease,
+        transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.demo-section:hover {
+    transform: translateY(-3px);
+    border-color: #4b4b4b;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+}
+
+.demo-section h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.demo-row {
+    flex-wrap: wrap;
+}
+
+.showcase-grid {
+    flex-wrap: wrap;
+}
+
+.demo-chip,
+.demo-box,
+.tile {
+    border: 1px solid #3a3a3a;
+    border-radius: 0.5rem;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.demo-chip:hover,
+.demo-box:hover,
+.tile:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #5f5f5f;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32);
+}
+
+.tile {
+    min-width: 4.8rem;
+    text-align: center;
+}
+
+@keyframes sweep {
+    0% {
+        transform: translateX(-120%);
+    }
+    55% {
+        transform: translateX(110%);
+    }
+    100% {
+        transform: translateX(110%);
+    }
+}
+
+@keyframes drift {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(24px, -16px) scale(1.1);
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    .page-header,
+    .demo-section {
+        border-radius: 0.6rem;
+    }
+
+    .demo-chip,
+    .demo-box,
+    .tile {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tailwind Utility</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/png" href="Duck-circular.png">
+
+    </head>
+    <body>
+        <header class="page-header chai-bg-[#1a1a1a] chai-p-[1.25rem] chai-my-[1rem]">
+            <h1 class="chai-underline chai-my-[0.5rem]">Lightweight Utility Demo</h1>
+            <p class="chai-italic">
+                A semantic showcase of available chai-* utility classes with CSS fallbacks.
+            </p>
+        </header>
+
+        <main class="page-main">
+            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
+                <h2 class="chai-my-[0.5rem]">Spacing Utilities</h2>
+                <div class="demo-row chai-flex chai-justify-between chai-items-center chai-gap-4">
+                    <div class="demo-chip chai-p-4 chai-mx-2 chai-bg-[#2b2b2b]">chai-p-4</div>
+                    <div class="demo-chip chai-px-6 chai-py-2 chai-bg-[#2b2b2b]">chai-px-6 chai-py-2</div>
+                    <div class="demo-chip chai-m-2 chai-bg-[#2b2b2b]">chai-m-2</div>
+                </div>
+            </section>
+
+            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
+                <h2 class="chai-my-[0.5rem]">Width And Height Utilities</h2>
+                <div class="demo-row chai-flex chai-gap-x-6 chai-items-end">
+                    <article class="demo-box chai-w-[8rem] chai-h-[4rem] chai-bg-[#245f73] chai-p-2">
+                        w-[8rem] h-[4rem]
+                    </article>
+                    <article class="demo-box chai-min-w-[10rem] chai-max-h-[5rem] chai-bg-[#6c4a26] chai-p-2">
+                        min-w-[10rem] max-h-[5rem]
+                    </article>
+                    <article class="demo-box chai-max-w-[12rem] chai-min-h-[3rem] chai-bg-[#3c5f2a] chai-p-2">
+                        max-w-[12rem] min-h-[3rem]
+                    </article>
+                </div>
+            </section>
+
+            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
+                <h2 class="chai-my-[0.5rem]">Flex Alignment And Gap</h2>
+                <div class="showcase-grid chai-flex chai-justify-around chai-items-center chai-gap-y-2 chai-gap-x-8">
+                    <div class="tile chai-bg-[#2f2f2f] chai-p-4 chai-bold">One</div>
+                    <div class="tile chai-bg-[#2f2f2f] chai-p-4">Two</div>
+                    <div class="tile chai-bg-[#2f2f2f] chai-p-4">Three</div>
+                    <div class="tile chai-bg-[#2f2f2f] chai-p-4 chai-italic">Four</div>
+                </div>
+            </section>
+
+            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
+                <h2 class="chai-my-[0.5rem]">Text And Background Utilities</h2>
+                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2">
+                    Default paragraph with chai-bg and chai-p.
+                </p>
+                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-bold">chai-bold applied</p>
+                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-italic">chai-italic applied</p>
+                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-underline">chai-underline applied</p>
+            </section>
+        </main>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

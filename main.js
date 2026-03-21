@@ -1,46 +1,4 @@
-/**
- *  Heading with min-width, min-height, margin-x
-        <h1 class="chai-bg-[#c6c6c6] chai-min-w-[10rem] chai-min-h-[20%] chai-mx-[20%] chai-underline">
-            Click Here
-        </h1>
-
-        <!-- Navigation with width and max-height -->
-        <nav class="nav chai-w-8 chai-max-h-[10rem]">
-            <ul class="chai-flex chai-justify-around chai-items-center chai-gap-2">
-                <li class="chai-p-8 chai-px-30 chai-m-2 bold">Home</li>
-                <li class="bold">Something</li>
-                <li class="chai-w-8">About</li>
-                <li class="chai-block chai-w-[5rem]">Contact</li>
-            </ul>
-        </nav>
-
-        <!-- Extra test elements -->
-        <div
-            class="chai-h-[200px] chai-w-[300px] chai-border-red chai-rounded-5"
-        >
-            Dummy Box
-        </div>
-
-        <p class="chai-py-4 chai-px-6 chai-italic  chai-uppercase">
-            Dummy paragraph text
-        </p>
- */
-
-// ======================= Necessary Maps =======================
-
-// Width
-const widthMap = {
-    w: ["width"],
-    "min-w": ["min-width"],
-    "max-w": ["max-width"],
-};
-
-// Height
-const heightMap = {
-    h: ["height"],
-    "min-h": ["min-height"],
-    "max-h": ["max-height"],
-};
+// ******************** Spacing (padding, margin)  ************************
 
 // Padding
 const paddingMap = {
@@ -62,45 +20,6 @@ const marginMap = {
     mb: ["margin-bottom"],
     ml: ["margin-left"],
     mr: ["margin-right"],
-};
-
-// Background
-const backgroundColorMap = {
-    bg: ["background-color"],
-};
-
-// Flexbox Justify Content
-const justifyMap = {
-    "justify-start": ["justify-content", "flex-start"],
-    "justify-end": ["justify-content", "flex-end"],
-    "justify-center": ["justify-content", "center"],
-    "justify-between": ["justify-content", "space-between"],
-    "justify-around": ["justify-content", "space-around"],
-    "justify-evenly": ["justify-content", "space-evenly"],
-};
-
-// Flexbox items Content
-
-const alignItemsMap = {
-    "items-start": ["align-items", "flex-start"],
-    "items-end": ["align-items", "flex-end"],
-    "items-center": ["align-items", "center"],
-    "items-baseline": ["align-items", "baseline"],
-    "items-stretch": ["align-items", "stretch"],
-};
-
-// Gap
-const gapMap = {
-    gap: ["gap"],
-    "gap-x": ["column-gap"],
-    "gap-y": ["row-gap"],
-};
-
-// Text-Emphasis
-const textEmphasisMap = {
-    bold: ["font-weight", "bold"],
-    italic: ["font-style", "italic"],
-    underline: ["text-decoration", "underline"],
 };
 
 // ======================= Padding Classes =======================
@@ -131,6 +50,23 @@ function margin(property, elem) {
     });
 }
 
+
+// ******************** Size (width, height)  ************************
+
+// Width
+const widthMap = {
+    w: ["width"],
+    "min-w": ["min-width"],
+    "max-w": ["max-width"],
+};
+
+// Height
+const heightMap = {
+    h: ["height"],
+    "min-h": ["min-height"],
+    "max-h": ["max-height"],
+};
+
 // ======================= Width Classes =======================
 
 function width(property, elem) {
@@ -158,18 +94,94 @@ function height(property, elem) {
     });
 }
 
-// ======================= Backgroud Classes =======================
-function background(property, elem) {
+
+
+// ******************** Colors (background, text)  ************************
+// Background
+const backgroundColorMap = {
+    bg: ["background-color"],
+    color: ["color"]
+};
+
+
+// Text-Emphasis
+const textEmphasisMap = {
+    bold: ["font-weight", "bold"],
+    italic: ["font-style", "italic"],
+    underline: ["text-decoration", "underline"],
+};
+
+
+// ======================= Backgroud Color Classes =======================
+function backgroundColor(property, elem) {
     const { prop, val } = property;
 
     const properties = backgroundColorMap[prop];
-
+    console.log(property);
+    
     if (!properties) return;
 
     properties.forEach((p) => {
         elem.style.setProperty(p, val);
     });
 }
+
+// ======================= Bold Classes =======================
+function bold(property, elem) {
+    const { prop, val } = property;
+
+    const to = textEmphasisMap[val];
+    elem.style.setProperty(to[0], to[1]);
+}
+
+// ======================= Italic Classes =======================
+function italic(property, elem) {
+    const { prop, val } = property;
+    const to = textEmphasisMap[val];
+
+    elem.style.setProperty(to[0], to[1]);
+}
+
+// ======================= Underline Classes =======================
+function underline(property, elem) {
+    const { prop, val } = property;
+    
+    const to = textEmphasisMap[val];
+
+    elem.style.setProperty(to[0], to[1]);
+}
+
+
+
+
+// ******************** Layout Utility (flexbox)  ************************
+
+// Flexbox Justify Content
+const justifyMap = {
+    "justify-start": ["justify-content", "flex-start"],
+    "justify-end": ["justify-content", "flex-end"],
+    "justify-center": ["justify-content", "center"],
+    "justify-between": ["justify-content", "space-between"],
+    "justify-around": ["justify-content", "space-around"],
+    "justify-evenly": ["justify-content", "space-evenly"],
+};
+
+// Flexbox items Content
+
+const alignItemsMap = {
+    "items-start": ["align-items", "flex-start"],
+    "items-end": ["align-items", "flex-end"],
+    "items-center": ["align-items", "center"],
+    "items-baseline": ["align-items", "baseline"],
+    "items-stretch": ["align-items", "stretch"],
+};
+
+// Gap
+const gapMap = {
+    gap: ["gap"],
+    "gap-x": ["column-gap"],
+    "gap-y": ["row-gap"],
+};
 
 // ======================= Flex Classes =======================
 function flexbox(property, elem) {
@@ -206,30 +218,6 @@ function gap(property, elem) {
     });
 }
 
-// ======================= Bold Classes =======================
-function bold(property, elem) {
-    const { prop, val } = property;
-
-    const to = textEmphasisMap[val];
-    elem.style.setProperty(to[0], to[1]);
-}
-
-// ======================= Italic Classes =======================
-function italic(property, elem) {
-    const { prop, val } = property;
-    const to = textEmphasisMap[val];
-
-    elem.style.setProperty(to[0], to[1]);
-}
-
-// ======================= Underline Classes =======================
-function underline(property, elem) {
-    const { prop, val } = property;
-    
-    const to = textEmphasisMap[val];
-
-    elem.style.setProperty(to[0], to[1]);
-}
 
 
 
@@ -238,6 +226,8 @@ function underline(property, elem) {
 
 
 
+
+// ******************** Parser and Controller Logic  ************************
 
 
 const chaiElem = document.querySelectorAll('[class*="chai-"]');
@@ -296,8 +286,8 @@ function passToHandler(property, elem) {
         width(property, elem);
     } else if (heightMap[prop]) {
         height(property, elem);
-    } else if (prop.startsWith("bg")) {
-        background(property, elem);
+    } else if (["bg", "color"].includes(prop) ) {
+        backgroundColor(property, elem);
     } else if (val.startsWith("flex")) {
         flexbox(property, elem);
     } else if (prop.startsWith("justify")) {
@@ -319,7 +309,9 @@ function passToHandler(property, elem) {
 
 
 
-// Animation Script written by AI
+// ******************** Animation Script written by AI  ************************
+
+
 function setupScrollReveal() {
     const revealTargets = document.querySelectorAll(".page-header, .demo-section");
 

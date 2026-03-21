@@ -3,65 +3,210 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tailwind Utility</title>
+        <title>Chai CSS | Futuristic Utility-First Engine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/png" href="Duck-circular.png">
-
     </head>
-    <body>
-        <header class="page-header chai-bg-[#1a1a1a] chai-p-[1.25rem] chai-my-[1rem]">
-            <h1 class="chai-underline chai-my-[0.5rem]">Lightweight Utility Demo</h1>
-            <p class="chai-italic">
-                A semantic showcase of available chai-* utility classes with CSS fallbacks.
-            </p>
-        </header>
-
-        <main class="page-main">
-            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
-                <h2 class="chai-my-[0.5rem]">Spacing Utilities</h2>
-                <div class="demo-row chai-flex chai-justify-between chai-items-center chai-gap-4">
-                    <div class="demo-chip chai-p-4 chai-mx-2 chai-bg-[#2b2b2b]">chai-p-4</div>
-                    <div class="demo-chip chai-px-6 chai-py-2 chai-bg-[#2b2b2b]">chai-px-6 chai-py-2</div>
-                    <div class="demo-chip chai-m-2 chai-bg-[#2b2b2b]">chai-m-2</div>
+    <body class="chai-bg-[#060607] chai-color-[#f2f2f4] chai-px-[1.25rem] chai-py-[1.25rem]">
+        <div class="shell">
+            <nav class="demo-section chai-flex chai-items-center chai-justify-between chai-px-6 chai-py-4 chai-bg-[#0f1012] chai-rounded-[1rem] chai-my-2">
+                <div class="chai-flex chai-items-center chai-gap-3">
+                    <span class="brand-orb"></span>
+                    <span class="chai-text-bold chai-color-[#ffffff]">Chai CSS</span>
                 </div>
-            </section>
-
-            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
-                <h2 class="chai-my-[0.5rem]">Width And Height Utilities</h2>
-                <div class="demo-row chai-flex chai-gap-x-6 chai-items-end">
-                    <article class="demo-box chai-w-[8rem] chai-h-[4rem] chai-bg-[#245f73] chai-p-2">
-                        w-[8rem] h-[4rem]
-                    </article>
-                    <article class="demo-box chai-min-w-[10rem] chai-max-h-[5rem] chai-bg-[#6c4a26] chai-p-2">
-                        min-w-[10rem] max-h-[5rem]
-                    </article>
-                    <article class="demo-box chai-max-w-[12rem] chai-min-h-[3rem] chai-bg-[#3c5f2a] chai-p-2">
-                        max-w-[12rem] min-h-[3rem]
-                    </article>
+                <div class="chai-flex chai-items-center chai-gap-4 nav-links">
+                    <a href="#features" class="chai-color-[#b9b9c0]">Features</a>
+                    <a href="#playground" class="chai-color-[#b9b9c0]">Playground</a>
+                    <a href="#tags" class="chai-color-[#b9b9c0]">Tags</a>
                 </div>
-            </section>
+            </nav>
 
-            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
-                <h2 class="chai-my-[0.5rem]">Flex Alignment And Gap</h2>
-                <div class="showcase-grid chai-flex chai-justify-around chai-items-center chai-gap-y-2 chai-gap-x-8">
-                    <div class="tile chai-bg-[#2f2f2f] chai-p-4 chai-bold">One</div>
-                    <div class="tile chai-bg-[#2f2f2f] chai-p-4">Two</div>
-                    <div class="tile chai-bg-[#2f2f2f] chai-p-4">Three</div>
-                    <div class="tile chai-bg-[#2f2f2f] chai-p-4 chai-italic">Four</div>
-                </div>
-            </section>
-
-            <section class="demo-section chai-bg-[#181818] chai-p-[1rem] chai-my-[1rem]">
-                <h2 class="chai-my-[0.5rem]">Text And Background Utilities</h2>
-                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2">
-                    Default paragraph with chai-bg and chai-p.
+            <header class="page-header demo-section chai-bg-[#0f1012] chai-rounded-[1.25rem] chai-px-6 chai-py-6 chai-my-4">
+                <p class="eyebrow chai-color-[#a0a0a8] chai-uppercase chai-bold chai-spacing-[0.14em]">
+                    Utility-First Engine
                 </p>
-                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-bold">chai-bold applied</p>
-                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-italic">chai-italic applied</p>
-                <p class="chai-bg-[#2a2a2a] chai-p-4 chai-my-2 chai-underline">chai-underline applied</p>
-            </section>
-        </main>
+                <h1 class="hero-title chai-text-bold chai-color-[#ffffff] chai-my-2">
+                    Futuristic Utility-First Styling Engine
+                </h1>
+                <p class="hero-subtitle chai-color-[#b9b9c0]  chai-my-6 ">
+                    Write styles directly in your HTML using chai-* classes.
+                </p>
+                <div class="chai-my-4  chai-mt-6 ">
+                    <a
+                        href="#features"
+                        class="cta-link chai-inline chai-bg-[#f5f5f7] chai-color-[#0b0b0f] chai-px-6 chai-py-3 chai-rounded-[0.75rem] chai-bold"
+                    >
+                        Get Started
+                    </a>
+                </div>
+            </header>
+
+            <main>
+                <section id="features" class="demo-section chai-bg-[#0f1012] chai-rounded-[1.25rem] chai-p-6 chai-my-4">
+                    <div class="chai-flex chai-items-center chai-justify-between chai-my-2 section-head">
+                        <h2 class="chai-text-bold chai-color-[#ffffff]">Feature / Demo</h2>
+                        <p class="chai-color-[#9a9aa2]">Copy utilities instantly</p>
+                    </div>
+
+                    <div class="feature-grid">
+                        <article class="feature-card chai-bg-[#14151a] chai-rounded-[0.9rem] chai-p-4">
+                            <div class="chai-flex chai-items-center chai-justify-between chai-mb-3">
+                                <code class="utility-code">chai-p-6</code>
+                                <button class="copy-btn" data-copy="chai-p-6" aria-label="Copy chai-p-6">
+                                    <span class="copy-feedback" aria-hidden="true">Copied!</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                                        <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="chai-bg-[#1b1d22] chai-rounded-[0.75rem] chai-color-[#d0d0d7] chai-p-6">
+                                Spacious padding preview
+                            </div>
+                        </article>
+
+                        <article class="feature-card chai-bg-[#14151a] chai-rounded-[0.9rem] chai-p-4">
+                            <div class="chai-flex chai-items-center chai-justify-between chai-mb-3">
+                                <code class="utility-code">chai-flex</code>
+                                <button class="copy-btn" data-copy="chai-flex" aria-label="Copy chai-flex">
+                                    <span class="copy-feedback" aria-hidden="true">Copied!</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                                        <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="chai-flex chai-items-center chai-gap-2">
+                                <span class="dot chai-bg-[#f2f2f4]"></span>
+                                <span class="dot chai-bg-[#ccccd2]"></span>
+                                <span class="dot chai-bg-[#a9a9b0]"></span>
+                            </div>
+                        </article>
+
+                        <article class="feature-card chai-bg-[#14151a] chai-rounded-[0.9rem] chai-p-4">
+                            <div class="chai-flex chai-items-center chai-justify-between chai-mb-3">
+                                <code class="utility-code">chai-bg-[#f5f5f7]</code>
+                                <button class="copy-btn" data-copy="chai-bg-[#f5f5f7]" aria-label="Copy chai-bg class">
+                                    <span class="copy-feedback" aria-hidden="true">Copied!</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                                        <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="chai-bg-[#f5f5f7] chai-color-[#121217] chai-rounded-[0.75rem] chai-p-3">
+                                Light contrast surface
+                            </div>
+                        </article>
+
+                        <article class="feature-card chai-bg-[#14151a] chai-rounded-[0.9rem] chai-p-4">
+                            <div class="chai-flex chai-items-center chai-justify-between chai-mb-3">
+                                <code class="utility-code">chai-border-[1px]</code>
+                                <button class="copy-btn" data-copy="chai-border-[1px]" aria-label="Copy chai-border class">
+                                    <span class="copy-feedback" aria-hidden="true">Copied!</span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                                        <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="border-demo chai-bg-[#1b1d22] chai-rounded-[0.75rem] chai-border-[1px] chai-p-3 chai-color-[#d0d0d7]">
+                                Border utility preview
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="playground" class="demo-section chai-bg-[#0f1012] chai-rounded-[1.25rem] chai-p-6 chai-my-4">
+                    <h2 class="chai-text-bold chai-color-[#ffffff] chai-mb-2">Playground</h2>
+                    <p class="chai-color-[#9a9aa2] chai-mb-4">
+                        Enter chai classes (space-separated) and see live preview.
+                    </p>
+                    <div class="chai-flex chai-gap-3 playground-input-wrap">
+                        <input
+                            id="playground-input"
+                            class="playground-input chai-bg-[#14151a] chai-color-[#f2f2f4] chai-px-4 chai-py-3 chai-rounded-[0.75rem]"
+                            value="chai-bg-[#f5f5f7] chai-color-[#111] chai-p-4 chai-rounded-[0.75rem]"
+                            aria-label="Playground classes"
+                        />
+                        <button id="apply-playground" class="apply-btn chai-bg-[#f5f5f7] chai-color-[#0c0c10] chai-px-4 chai-py-3 chai-rounded-[0.75rem] chai-bold">
+                            <span class="apply-btn-icon" aria-hidden="true">↻</span>
+                            <span>Preview</span>
+                        </button>
+                        <button
+                            id="copy-playground"
+                            class="apply-btn copy-playground-btn chai-bg-[#1a1b20] chai-color-[#f2f2f4] chai-px-4 chai-py-3 chai-rounded-[0.75rem]"
+                            aria-label="Copy playground classes"
+                        >
+                            <span aria-hidden="true">⧉</span>
+                            <span class="copy-playground-label">Copy Classes</span>
+                        </button>
+                    </div>
+                    <div class="chai-mt-4">
+                        <div
+                            id="playground-preview"
+                            class="playground-preview chai-bg-[#1b1d22] chai-color-[#d9d9df] chai-p-4 chai-rounded-[0.75rem]"
+                        >
+                            Live preview surface
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tags" class="demo-section chai-bg-[#0f1012] chai-rounded-[1.25rem] chai-p-6 chai-my-4">
+                    <h2 class="chai-text-bold chai-color-[#ffffff] chai-mb-3">Style Tags</h2>
+                    <div class="tag-wrap chai-flex chai-gap-3">
+                        <span class="style-tag chai-bg-[#1b1d22] chai-color-[#d5d5db] chai-px-4 chai-py-2 chai-rounded-[999px]">Spacing</span>
+                        <span class="style-tag chai-bg-[#1b1d22] chai-color-[#d5d5db] chai-px-4 chai-py-2 chai-rounded-[999px]">Flex</span>
+                        <span class="style-tag chai-bg-[#1b1d22] chai-color-[#d5d5db] chai-px-4 chai-py-2 chai-rounded-[999px]">Colors</span>
+                        <span class="style-tag chai-bg-[#1b1d22] chai-color-[#d5d5db] chai-px-4 chai-py-2 chai-rounded-[999px]">Borders</span>
+                    </div>
+
+                    <div class="quick-demo-grid chai-mt-4">
+                        <div class="quick-demo-card chai-bg-[#14151a] chai-rounded-[0.75rem] chai-p-3">
+                            <p class="chai-color-[#9a9aa2] chai-mb-2">Spacing: <code class="utility-inline">chai-p-4</code></p>
+                            <div class="chai-bg-[#1b1d22] chai-rounded-[0.6rem] chai-p-4 chai-color-[#d9d9df]">Padded box</div>
+                        </div>
+                        <div class="quick-demo-card chai-bg-[#14151a] chai-rounded-[0.75rem] chai-p-3">
+                            <p class="chai-color-[#9a9aa2] chai-mb-2">Flex: <code class="utility-inline">chai-flex chai-gap-2</code></p>
+                            <div class="chai-flex chai-gap-2">
+                                <span class="dot chai-bg-[#f2f2f4]"></span>
+                                <span class="dot chai-bg-[#ccccd2]"></span>
+                                <span class="dot chai-bg-[#a9a9b0]"></span>
+                            </div>
+                        </div>
+                        <div class="quick-demo-card chai-bg-[#14151a] chai-rounded-[0.75rem] chai-p-3">
+                            <p class="chai-color-[#9a9aa2] chai-mb-2">Colors: <code class="utility-inline">chai-bg-[#f5f5f7]</code></p>
+                            <div class="chai-bg-[#f5f5f7] chai-color-[#111] chai-rounded-[0.6rem] chai-p-3">Color preview</div>
+                        </div>
+                        <div class="quick-demo-card chai-bg-[#14151a] chai-rounded-[0.75rem] chai-p-3">
+                            <p class="chai-color-[#9a9aa2] chai-mb-2">Border: <code class="utility-inline">chai-border-[1px]</code></p>
+                            <div class="border-demo chai-bg-[#1b1d22] chai-rounded-[0.6rem] chai-border-[1px] chai-p-3 chai-color-[#d9d9df]">
+                                Border preview
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="chai-text-center chai-color-[#83838c] chai-py-4 chai-my-2">
+                Chai CSS - Futuristic utility-first styling for developers.
+                <a
+                    href="https://github.com/harshcsrivastava"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer-link chai-color-[#c9c9d0]"
+                >
+                    github.com/harshcsrivastava
+                </a>
+            </footer>
+        </div>
 
         <script src="./main.js"></script>
+        <script src="./ui.js"></script>
     </body>
 </html>

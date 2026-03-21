@@ -1,22 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    </style>
-</head>
-<body class="chai-bg-[#111] chai-color-white">
-    <h1 class="chai-bg-[#c6c6c6] chai-min-w-[10rem] chai-min-h-[20%] chai-mx-[20%] chai-underline">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                /* text-transform: uppercase; */
+            }
+        </style>
+    </head>
+    <body class="chai-bg-[#111] chai-color-white">
+        <h1
+            class="chai-uppercase chai-min-w-[10rem] chai-min-h-[20%] chai-mx-[20%] chai-underline"
+        >
             Click Here
         </h1>
 
         <!-- Navigation with width and max-height -->
-        <nav class="nav chai-w-8 chai-max-h-[10rem]">
-            <ul class="chai-flex chai-justify-around chai-items-center chai-gap-2">
+        <nav
+            class="nav chai-w-8 chai-indent-2 chai-line-height-2 chai-max-h-[10rem]"
+        >
+            <ul
+                class="chai-flex chai-justify-around chai-items-center chai-gap-2"
+            >
                 <li class="chai-p-8 chai-px-30 chai-m-2 bold">Home</li>
-                <li class="bold">Something</li>
+                <li class="chai-bold chai-lowercase">Something</li>
                 <li class="chai-w-8">About</li>
                 <li class="chai-block chai-w-[5rem]">Contact</li>
             </ul>
@@ -24,15 +33,17 @@
 
         <!-- Extra test elements -->
         <div
-            class="chai-h-[200px] chai-w-[300px] chai-border-red chai-rounded-5"
+            class="chai-h-[200px] chai-bg-red chai-spacing-8 chai-w-[300px] chai-border-red chai-rounded-5"
         >
             Dummy Box
         </div>
 
-        <p class="chai-py-4 chai-px-6 chai-italic  chai-uppercase">
+        <p
+            class="chai-h-[8px] chai-py-4 chai-center chai-px-6 chai-italic chai-uppercase"
+        >
             Dummy paragraph text
         </p>
 
         <script src="main.js"></script>
-</body>
+    </body>
 </html>

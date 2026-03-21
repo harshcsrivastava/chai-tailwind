@@ -1,7 +1,6 @@
 // ******************** Spacing (padding, margin)  ************************
 
-// Padding
-const paddingMap = {
+const paddingAndMarginMap = {
     p: ["padding"],
     px: ["padding-left", "padding-right"],
     py: ["padding-top", "padding-bottom"],
@@ -9,10 +8,6 @@ const paddingMap = {
     pb: ["padding-bottom"],
     pl: ["padding-left"],
     pr: ["padding-right"],
-};
-
-// Margin
-const marginMap = {
     m: ["margin"],
     mx: ["margin-left", "margin-right"],
     my: ["margin-top", "margin-bottom"],
@@ -22,12 +17,12 @@ const marginMap = {
     mr: ["margin-right"],
 };
 
-// ======================= Padding Classes =======================
+// ======================= Padding & Margin Classes =======================
 
-function padding(property, elem) {
+function paddingAndMargin(property, elem) {
     const { prop, val } = property;
 
-    const properties = paddingMap[prop];
+    const properties = paddingAndMarginMap[prop];
 
     if (!properties) return;
 
@@ -35,44 +30,24 @@ function padding(property, elem) {
         elem.style.setProperty(p, val);
     });
 }
-
-// ======================= Margin Classes =======================
-
-function margin(property, elem) {
-    const { prop, val } = property;
-
-    const properties = marginMap[prop];
-
-    if (!properties) return;
-
-    properties.forEach((p) => {
-        elem.style.setProperty(p, val);
-    });
-}
-
 
 // ******************** Size (width, height)  ************************
 
-// Width
-const widthMap = {
+const widthAndHeightMap = {
     w: ["width"],
     "min-w": ["min-width"],
     "max-w": ["max-width"],
-};
-
-// Height
-const heightMap = {
     h: ["height"],
     "min-h": ["min-height"],
     "max-h": ["max-height"],
 };
 
-// ======================= Width Classes =======================
+// ======================= Width & Height Classes =======================
 
-function width(property, elem) {
+function widthAndHeight(property, elem) {
     const { prop, val } = property;
 
-    const properties = widthMap[prop];
+    const properties = widthAndHeightMap[prop];
 
     if (!properties) return;
 
@@ -81,44 +56,40 @@ function width(property, elem) {
     });
 }
 
-// ======================= Height Classes =======================
-function height(property, elem) {
-    const { prop, val } = property;
-
-    const properties = heightMap[prop];
-
-    if (!properties) return;
-
-    properties.forEach((p) => {
-        elem.style.setProperty(p, val);
-    });
-}
-
-
-
-// ******************** Colors (background, text)  ************************
+// ******************** Colors & Typography (background, emphasis, alignment)  ************************
 // Background
-const backgroundColorMap = {
+const backgroundColorAndTextStylingMap = {
     bg: ["background-color"],
-    color: ["color"]
+    color: ["color"],
+    spacing: ["letter-spacing"],
+    indent: ["text-indent"],
+    "line-height": ["line-height"],
 };
 
-
-// Text-Emphasis
-const textEmphasisMap = {
+// Text-Transform
+const textStylingMap = {
     bold: ["font-weight", "bold"],
     italic: ["font-style", "italic"],
     underline: ["text-decoration", "underline"],
+    uppercase: ["text-transform", "uppercase"],
+    lowercase: ["text-transform", "lowercase"],
+    capitalize: ["text-transform", "capitalize"],
+    none: ["text-transform", "none"],
+    fullWidth: ["text-transform", "full-width"],
+    left: ["text-align", "left"],
+    right: ["text-align", "right"],
+    center: ["text-align", "center"],
+    justify: ["text-align", "justify"],
+    start: ["text-align", "start"],
+    end: ["text-align", "end"],
 };
 
-
 // ======================= Backgroud Color Classes =======================
-function backgroundColor(property, elem) {
+function backgroundColorAndTextStyling(property, elem) {
     const { prop, val } = property;
 
-    const properties = backgroundColorMap[prop];
-    console.log(property);
-    
+    const properties = backgroundColorAndTextStylingMap[prop];
+
     if (!properties) return;
 
     properties.forEach((p) => {
@@ -126,49 +97,75 @@ function backgroundColor(property, elem) {
     });
 }
 
-// ======================= Bold Classes =======================
-function bold(property, elem) {
+// ======================= Text Styling Classes =======================
+function textStyling(property, elem) {
     const { prop, val } = property;
 
-    const to = textEmphasisMap[val];
-    elem.style.setProperty(to[0], to[1]);
-}
-
-// ======================= Italic Classes =======================
-function italic(property, elem) {
-    const { prop, val } = property;
-    const to = textEmphasisMap[val];
+    const to = textStylingMap[val];
 
     elem.style.setProperty(to[0], to[1]);
 }
 
-// ======================= Underline Classes =======================
-function underline(property, elem) {
+// ******************** Borders and radius  ************************
+
+const borderAndRadiusMap = {
+    border: ["border-width"],
+    "border-t": ["border-top-width"],
+    "border-r": ["border-right-width"],
+    "border-b": ["border-bottom-width"],
+    "border-l": ["border-left-width"],
+    rounded: ["border-radius"],
+    "rounded-t": ["border-top-left-radius", "border-top-right-radius"],
+    "rounded-r": ["border-top-right-radius", "border-bottom-right-radius"],
+    "rounded-b": ["border-bottom-left-radius", "border-bottom-right-radius"],
+    "rounded-l": ["border-top-left-radius", "border-bottom-left-radius"],
+    "rounded-tl": ["border-top-left-radius"],
+    "rounded-tr": ["border-top-right-radius"],
+    "rounded-br": ["border-bottom-right-radius"],
+    "rounded-bl": ["border-bottom-left-radius"],
+};
+
+// ======================= Border & Radius Classes =======================
+function borderAndRadius(property, elem) {
     const { prop, val } = property;
-    
-    const to = textEmphasisMap[val];
+
+    const properties = borderAndRadiusMap[prop];
+
+    if (!properties) return;
+
+    properties.forEach((p) => {
+        elem.style.setProperty(p, val);
+    });
+}
+
+// ******************** Layout Utility (display)  ************************
+
+const displayMap = {
+    block: ["display", "block"],
+    inline: ["display", "inline"],
+    flex: ["display", "flex"],
+};
+
+// ======================= Display Classes =======================
+function display(property, elem) {
+    const { prop, val } = property;
+
+    const key = prop === "display" ? val : prop;
+    const to = displayMap[key];
+
+    if (!to) return;
 
     elem.style.setProperty(to[0], to[1]);
 }
 
-
-
-
-// ******************** Layout Utility (flexbox)  ************************
-
-// Flexbox Justify Content
-const justifyMap = {
+// Flexbox Justify & Align Content
+const justifyAndAlignMap = {
     "justify-start": ["justify-content", "flex-start"],
     "justify-end": ["justify-content", "flex-end"],
     "justify-center": ["justify-content", "center"],
     "justify-between": ["justify-content", "space-between"],
     "justify-around": ["justify-content", "space-around"],
     "justify-evenly": ["justify-content", "space-evenly"],
-};
-
-// Flexbox items Content
-
-const alignItemsMap = {
     "items-start": ["align-items", "flex-start"],
     "items-end": ["align-items", "flex-end"],
     "items-center": ["align-items", "center"],
@@ -183,24 +180,10 @@ const gapMap = {
     "gap-y": ["row-gap"],
 };
 
-// ======================= Flex Classes =======================
-function flexbox(property, elem) {
-    const { prop, val } = property;
-    elem.style.setProperty("display", val);
-}
-
 // ======================= Justify Content Classes =======================
-function justify(property, elem) {
+function justifyAndAlign(property, elem) {
     const { prop, val } = property;
-    const to = justifyMap[prop + "-" + val];
-
-    elem.style.setProperty(to[0], to[1]);
-}
-
-// ======================= Align Items Classes =======================
-function alignItems(property, elem) {
-    const { prop, val } = property;
-    const to = alignItemsMap[prop + "-" + val];
+    const to = justifyAndAlignMap[prop + "-" + val];
 
     elem.style.setProperty(to[0], to[1]);
 }
@@ -218,17 +201,7 @@ function gap(property, elem) {
     });
 }
 
-
-
-
-
-
-
-
-
-
 // ******************** Parser and Controller Logic  ************************
-
 
 const chaiElem = document.querySelectorAll('[class*="chai-"]');
 
@@ -251,6 +224,14 @@ function identifyCSSPropertyAndValue(value) {
     const trimmed = value.slice(5);
     // finding last index so that i can extract the value from last
     const lastHyphen = trimmed.lastIndexOf("-");
+
+    // Handles single-token utilities like chai-flex or chai-block
+    if (lastHyphen === -1) {
+        return {
+            prop: trimmed,
+            val: trimmed,
+        };
+    }
 
     const raw = trimmed.slice(lastHyphen + 1);
     const num = Number(raw);
@@ -278,42 +259,33 @@ function passToHandler(property, elem) {
 
     const { prop, val } = property;
 
-    if (paddingMap[prop]) {
-        padding(property, elem);
-    } else if (marginMap[prop]) {
-        margin(property, elem);
-    } else if (widthMap[prop]) {
-        width(property, elem);
-    } else if (heightMap[prop]) {
-        height(property, elem);
-    } else if (["bg", "color"].includes(prop) ) {
-        backgroundColor(property, elem);
-    } else if (val.startsWith("flex")) {
-        flexbox(property, elem);
-    } else if (prop.startsWith("justify")) {
-        justify(property, elem);
-    } else if (prop.startsWith("items")) {
-        alignItems(property, elem);
+    if (paddingAndMarginMap[prop]) {
+        paddingAndMargin(property, elem);
+    } else if (widthAndHeightMap[prop]) {
+        widthAndHeight(property, elem);
+    } else if (borderAndRadiusMap[prop]) {
+        borderAndRadius(property, elem);
+    } else if (Object.keys(backgroundColorAndTextStylingMap).includes(prop)) {
+        backgroundColorAndTextStyling(property, elem);
+    } else if (displayMap[prop] || (prop === "display" && displayMap[val])) {
+        display(property, elem);
+    } else if (Object.keys(justifyAndAlignMap).includes(`${prop}-${val}`)) {
+        justifyAndAlign(property, elem);
     } else if (gapMap[prop]) {
         gap(property, elem);
-    } else if (val.startsWith("bold")) {
-        bold(property, elem);
-    } else if (val.startsWith("italic")) {
-        italic(property, elem);
-    } else if (val.startsWith("underline")) {
-        underline(property, elem);
+    } else if (Object.keys(textStylingMap).includes(val)) {
+        textStyling(property, elem);
     } else {
         console.log("Unused ", property);
     }
 }
 
-
-
 // ******************** Animation Script written by AI  ************************
 
-
 function setupScrollReveal() {
-    const revealTargets = document.querySelectorAll(".page-header, .demo-section");
+    const revealTargets = document.querySelectorAll(
+        ".page-header, .demo-section",
+    );
 
     revealTargets.forEach((elem, index) => {
         elem.classList.add("reveal-on-scroll");
@@ -337,7 +309,7 @@ function setupScrollReveal() {
         {
             threshold: 0.18,
             rootMargin: "0px 0px -40px 0px",
-        }
+        },
     );
 
     revealTargets.forEach((elem) => observer.observe(elem));

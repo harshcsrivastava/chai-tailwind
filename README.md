@@ -23,11 +23,34 @@ Flow of the script:
 ---
 
 ## Supported Utilities
-You are expected to support multiple commonly used utilities such as:
+Currently supported chai utilities are:
 
-- Spacing (padding, margin)  
-- Colors (background, text)  
-- Typography (font size, alignment)  
-- Borders and radius  
-- Basic layout utilities  
+- Spacing
+	- `chai-p-*`, `chai-px-*`, `chai-py-*`, `chai-pt-*`, `chai-pr-*`, `chai-pb-*`, `chai-pl-*`
+	- `chai-m-*`, `chai-mx-*`, `chai-my-*`, `chai-mt-*`, `chai-mr-*`, `chai-mb-*`, `chai-ml-*`
+- Sizing
+	- `chai-w-*`, `chai-min-w-*`, `chai-max-w-*`
+	- `chai-h-*`, `chai-min-h-*`, `chai-max-h-*`
+- Color and text-related utilities
+	- `chai-bg-*` (background-color)
+	- `chai-color-*` (text color)
+	- `chai-spacing-*` (letter-spacing)
+	- `chai-indent-*` (text-indent)
+	- `chai-line-height-*`
+	- Emphasis and text transform/alignment via value token:
+		`chai-text-bold`, `chai-text-italic`, `chai-text-underline`,
+		`chai-text-uppercase`, `chai-text-lowercase`, `chai-text-capitalize`,
+		`chai-text-none`, `chai-text-fullWidth`, `chai-text-left`,
+		`chai-text-right`, `chai-text-center`, `chai-text-justify`,
+		`chai-text-start`, `chai-text-end`
+- Border and radius
+	- `chai-border-*`, `chai-border-t-*`, `chai-border-r-*`, `chai-border-b-*`, `chai-border-l-*`
+	- `chai-rounded-*`, `chai-rounded-t-*`, `chai-rounded-r-*`, `chai-rounded-b-*`, `chai-rounded-l-*`
+	- `chai-rounded-tl-*`, `chai-rounded-tr-*`, `chai-rounded-br-*`, `chai-rounded-bl-*`
+- Layout
+	- Display: `chai-block`, `chai-inline`, `chai-flex`
+	- Also supported: `chai-display-block`, `chai-display-inline`, `chai-display-flex`
+	- Flex alignment: `chai-justify-start|end|center|between|around|evenly`
+	- Flex items: `chai-items-start|end|center|baseline|stretch`
+	- Gap: `chai-gap-*`, `chai-gap-x-*`, `chai-gap-y-*`
 

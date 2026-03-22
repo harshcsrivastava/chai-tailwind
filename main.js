@@ -203,19 +203,20 @@ function gap(property, elem) {
 
 // ******************** Parser and Controller Logic  ************************
 
-const chaiElem = document.querySelectorAll('[class*="chai-"]');
+// DOMContentLoad allows the script to run only when the DOM Tree is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const chaiElem = document.querySelectorAll('[class*="chai-"]');
 
-chaiElem.forEach((elem) => {
-    const classes = elem.className.split(" ");
+    chaiElem.forEach((elem) => {
+        const classes = elem.className.split(" "); // ["chai-w-4" ,"chai-h-3"]
 
-    classes.forEach((cls) => {
-        if (cls.startsWith("chai-")) {
-            //received element like chai-black
-            // triming to extract property
-            const property = identifyCSSPropertyAndValue(cls);
+        classes.forEach((cls) => {
+                //received element like chai-black
+                // triming to extract property
+                const property = identifyCSSPropertyAndValue(cls);
 
-            passToHandler(property, elem);
-        }
+                passToHandler(property, elem);
+        });
     });
 });
 
